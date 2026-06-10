@@ -141,7 +141,7 @@ button, a { touch-action: manipulation; }
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   align-items: center;
   gap: 72px;
-  padding-top: 32px;
+  padding-top: 0;
 }
 
 .eyebrow {
@@ -274,10 +274,11 @@ h1 span, h2 span { font-family: "Instrument Serif", serif; font-weight: 400; fon
 }
 
 .float-card strong, .float-card span { display: block; }
+.float-one strong, .float-two strong { font-size: 2.15rem; line-height: 0.95; letter-spacing: -0.06em; }
 .float-card span { color: var(--muted); font-size: 0.88rem; }
 .float-one { top: 78px; left: 0; }
 .float-two { right: 0; top: 280px; }
-.float-three { left: 50px; bottom: 78px; }
+.float-three { left: 50%; bottom: 78px; transform: translateX(-50%); }
 
 .section-heading { max-width: 720px; margin-bottom: 48px; }
 .section-heading h2 { margin-bottom: 14px; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 0.98; letter-spacing: -0.06em; }
@@ -413,7 +414,7 @@ h1 span, h2 span { font-family: "Instrument Serif", serif; font-weight: 400; fon
   .float-card { min-width: 155px; padding: 14px; }
   .float-one { left: 0; top: 42px; }
   .float-two { right: 0; top: 210px; }
-  .float-three { left: 24px; bottom: 42px; }
+  .float-three { left: 50%; bottom: 42px; transform: translateX(-50%); }
   .project { padding: 14px; border-radius: 30px; }
   .project-shot { min-height: 300px; }
   .footer-inner { flex-direction: column; }

@@ -343,9 +343,11 @@ h1 span, h2 span { font-family: "Instrument Serif", serif; font-weight: 400; fon
   background: rgba(255,255,255,0.72);
   box-shadow: 0 10px 26px rgba(31,41,55,0.05);
 }
-.build-card { min-height: 260px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; }
+.build-card { min-height: 260px; padding: 26px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; }
 .build-card h3, .about-grid h3, .roadmap h3 { font-size: 1.45rem; letter-spacing: -0.035em; }
+.build-card h3 { margin-bottom: 0; }
 .build-card p, .about-grid p, .roadmap p, .social-card p { color: var(--muted); }
+.build-card .tags li { font-size: 0.68rem; padding: 5px 9px; }
 .build-card span { color: var(--accent-strong); font-weight: 700; font-size: 0.9rem; }
 
 .about-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }

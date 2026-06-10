@@ -380,8 +380,9 @@ h1 span, h2 span { font-family: "Instrument Serif", serif; font-weight: 400; fon
 
 .social-card { min-height: 220px; padding: 26px; transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 .social-card:hover { border-color: rgba(96, 165, 250, 0.42); box-shadow: var(--shadow-soft); }
-.social-card span { color: var(--accent-strong); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.1em; }
-.social-card strong { display: block; margin: 42px 0 12px; font-size: 1.35rem; letter-spacing: -0.035em; }
+.social-card span { display: inline-flex; align-items: center; gap: 10px; color: var(--accent-strong); font-weight: 800; font-size: 1.35rem; letter-spacing: 0.04em; }
+.social-card span i { font-size: 1.8rem; }
+.social-card strong { display: block; margin: 42px 0 12px; font-size: 1.1rem; letter-spacing: -0.025em; }
 
 .archive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .archive-grid article { padding: 22px; }

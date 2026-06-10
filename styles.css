@@ -142,6 +142,7 @@ button, a { touch-action: manipulation; }
   align-items: center;
   gap: 72px;
   padding-top: 0;
+  padding-bottom: 48px;
 }
 
 .eyebrow {

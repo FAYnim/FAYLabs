@@ -457,6 +457,14 @@ h2 span {
   font-size: 0.94rem;
 }
 
+.project-content > p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
 .problem-solution {
   display: grid;
   gap: 6px;

@@ -123,15 +123,15 @@ Version: MVP
 
 Frontend:
 
-* HTML
+* PHP
 * CSS
 * JavaScript
 
 Deployment:
 
-* Vercel
+* PHP hosting
   or
-* Netlify
+* Apache/XAMPP
 
 Assets:
 

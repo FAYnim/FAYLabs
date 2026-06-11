@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Building real products and sharing the journey publicly.">
-  <meta name="keywords" content="product builder, full stack developer, web developer, portfolio, ai builder, software engineer">
-  <meta property="og:title" content="FAY — Product Builder & Full-Stack Developer">
-  <meta property="og:description" content="Building real products and sharing the journey publicly.">
-  <meta property="og:type" content="website">
-  <title>FAY — Product Builder & Full-Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="site-header" aria-label="Primary navigation">
-    <nav class="nav container">
-      <a class="brand" href="#top" aria-label="FAYdev Labs home">FAYdev Labs</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span>
-      </button>
-      <div class="nav-menu" id="nav-menu">
-        <a href="#work">Work</a>
-        <a href="#build">Build</a>
-        <a href="#about">About</a>
-        <a href="#public">Journey</a>
-      </div>
-    </nav>
-  </header>
+<?php require __DIR__ . '/partials/header.php'; ?>
 
   <main id="main">
     <section class="hero container section" id="top">
@@ -206,14 +173,4 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div><a class="brand" href="#top">FAYdev Labs</a><p>Problem Solver, Product Builder, Lifelong Learner</p></div>
-      <div class="footer-links"><a href="https://github.com/FAYnim">GitHub</a><a href="https://www.linkedin.com/in/faris-ay">LinkedIn</a><a href="https://www.instagram.com/fay.developer">Instagram</a><a href="https://www.threads.com/@faris.a.y">Threads</a></div>
-    </div>
-    <p class="copyright">© 2026 FAY. Built in public.</p>
-  </footer>
-
-  <script src="assets/js/script.js"></script>
-</body>
-</html>
+<?php require __DIR__ . '/partials/footer.php'; ?>

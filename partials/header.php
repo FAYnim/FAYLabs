@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Building real products and sharing the journey publicly.">
   <meta name="keywords" content="product builder, full stack developer, web developer, portfolio, ai builder, software engineer">
-  <meta property="og:title" content="FAY — Product Builder & Full-Stack Developer">
+  <meta property="og:title" content="FAY | Product Builder & Full-Stack Developer">
   <meta property="og:description" content="Building real products and sharing the journey publicly.">
   <meta property="og:type" content="website">
-  <title>FAY — Product Builder & Full-Stack Developer</title>
+  <title>FAY | Product Builder & Full-Stack Developer</title>
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">

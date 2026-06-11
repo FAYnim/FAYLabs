@@ -125,9 +125,9 @@
           </div>
           <p class="about-lead">Great products start by understanding real problems, not chasing trends. I believe good technology should feel simple, useful, and reliable, then keep improving through feedback, constraints, and real-world use.</p>
           <div class="belief-list">
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-bullseye"></i></span><div><strong>Solve Real Problems</strong><p>Focus on meaningful problems that make a difference.</p></div></div>
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-arrow-trend-up"></i></span><div><strong>Create Real Value</strong><p>Build products that deliver measurable impact.</p></div></div>
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-code"></i></span><div><strong>Learn by Building</strong><p>Ship early, learn fast, and keep iterating.</p></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-bullseye"></i></span><div><strong>Solve Real Problems</strong></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-arrow-trend-up"></i></span><div><strong>Create Real Value</strong></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-code"></i></span><div><strong>Learn by Building</strong></div></div>
           </div>
         </article>
         <article class="process reveal">
@@ -136,11 +136,11 @@
             <div><h3>How I Build</h3><span class="title-line"></span></div>
           </div>
           <ol>
-            <li><span>Problem</span><p>I identify problems worth solving.</p></li>
-            <li><span>Research</span><p>I understand users and the context.</p></li>
-            <li><span>MVP</span><p>I build the simplest version possible.</p></li>
-            <li><span>Feedback</span><p>I listen, learn, and collect feedback.</p></li>
-            <li><span>Iteration</span><p>I improve and make it better, always.</p></li>
+            <li><span>Problem</span></li>
+            <li><span>Research</span></li>
+            <li><span>MVP</span></li>
+            <li><span>Feedback</span></li>
+            <li><span>Iteration</span></li>
           </ol>
         </article>
         <article class="focus reveal">
@@ -149,10 +149,10 @@
             <div><h3>Current Focus</h3><span class="title-line"></span></div>
           </div>
           <div class="focus-list">
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-code"></i></span><div><strong>Product Development</strong><p>Building useful products with clean code and great user experience.</p></div></div>
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><div><strong>AI</strong><p>Exploring AI tools and integrating them into real-world solutions.</p></div></div>
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-briefcase"></i></span><div><strong>Business Systems</strong><p>Creating systems that simplify operations and improve productivity.</p></div></div>
-            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-bolt"></i></span><div><strong>Emerging Technologies</strong><p>Experimenting with new technologies and future opportunities.</p></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-code"></i></span><div><strong>Product Development</strong></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><div><strong>AI & Automation</strong></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-briefcase"></i></span><div><strong>Business Systems</strong></div></div>
+            <div class="about-item"><span class="item-icon"><i class="fa-solid fa-bolt"></i></span><div><strong>Emerging Technologies</strong></div></div>
           </div>
         </article>
       </div>

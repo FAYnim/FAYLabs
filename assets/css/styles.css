@@ -851,6 +851,8 @@ h2 span {
 
   .hero {
     gap: 28px;
+    min-height: auto;
+    padding-top: 56px;
   }
 
   .hero-visual {
@@ -905,7 +907,22 @@ h2 span {
   }
 
   h1 {
-    font-size: clamp(3.1rem, 17vw, 5.2rem);
+    font-size: clamp(2.7rem, 14vw, 4.6rem);
+    line-height: 0.92;
+  }
+
+  .hero-text {
+    font-size: 1.05rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    margin: 28px 0 0;
+  }
+
+  .button,
+  .project-links a {
+    width: 100%;
   }
 
   .stats,
@@ -917,35 +934,51 @@ h2 span {
   }
 
   .hero-visual {
-    min-height: 440px;
+    width: min(100%, 390px);
+    min-height: 430px;
+    margin: 10px auto 0;
   }
 
   .portrait-card {
-    inset: 20px 12px 34px;
+    top: 50%;
+    left: 50%;
+    width: min(78vw, 320px);
+    border-radius: 32px;
+    transform: translate(-50%, -50%);
+  }
+
+  .portrait-img {
     border-radius: 32px;
   }
 
-  .portrait-placeholder {
-    inset: 34px 30px 0;
+  .float-card {
+    min-width: 132px;
+    padding: 12px 14px;
+    border-radius: 18px;
   }
 
-  .float-card {
-    min-width: 155px;
-    padding: 14px;
+  .float-one strong,
+  .float-two strong {
+    font-size: 1.55rem;
+  }
+
+  .float-card span {
+    font-size: 0.76rem;
   }
 
   .float-one {
-    top: 42px;
+    top: 18px;
     left: 0;
   }
 
   .float-two {
-    top: 210px;
+    top: auto;
     right: 0;
+    bottom: 78px;
   }
 
   .float-three {
-    bottom: 42px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
   }

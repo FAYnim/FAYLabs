@@ -279,17 +279,9 @@ $projects = fetchPublishedProjects();
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header" aria-label="Primary navigation">
+  <header class="site-header" aria-label="Site header">
     <nav class="nav container">
       <a class="brand" href="index.php" aria-label="FAYdev Labs home">FAYdev Labs</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span>
-      </button>
-      <div class="nav-menu" id="nav-menu">
-        <a href="index.php#work">Work</a>
-        <a href="index.php#about">About</a>
-        <a href="index.php#public">Journey</a>
-      </div>
     </nav>
   </header>
 
@@ -377,15 +369,6 @@ $projects = fetchPublishedProjects();
     }, { threshold: 0.08 });
     revealEls.forEach(el => revealObs.observe(el));
 
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu   = document.querySelector('.nav-menu');
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', isOpen);
-      });
-    }
 
     // Load more
     const loadMoreBtn  = document.getElementById('load-more-btn');

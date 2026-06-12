@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/includes/projects.php';
+require __DIR__ . '/includes/Markdown.php';
 
 $slug    = trim((string) ($_GET['slug'] ?? ''));
 $project = $slug !== '' ? fetchProjectBySlug($slug) : null;
@@ -121,7 +122,7 @@ $ogImage = $project['cover_image'] ?? '';
           <div class="project-article">
             <?php if ($project['content'] !== ''): ?>
               <div class="prose">
-                <?= $project['content'] /* trusted admin-authored HTML */ ?>
+                <?= markdownToHtml($project['content']) ?>
               </div>
             <?php else: ?>
               <p class="prose-empty">No write-up published yet. Check back soon — the story behind this project is on the way.</p>

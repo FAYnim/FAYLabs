@@ -1,4 +1,10 @@
-<?php require __DIR__ . '/partials/header.php'; ?>
+<?php
+require __DIR__ . '/includes/projects.php';
+
+$projects = fetchPublishedProjects();
+
+require __DIR__ . '/partials/header.php';
+?>
 
   <main id="main">
     <section class="hero container section" id="top">
@@ -38,64 +44,37 @@
         <p>Selected projects focused on outcomes, systems, and learning loops.</p>
       </div>
       <div class="showcase">
-        <article class="project reverse reveal">
-          <img class="project-shot" src="https://placehold.co/800x500/eafcf5/1f5f4d?text=Travel+CRM" alt="Travel CRM project placeholder screenshot">
-          <div class="project-content">
-            <h3>Travel CRM</h3>
-            <p>A business system for organizing leads, trips, customers, and operational follow-ups, built to replace scattered chats, sheets, and notes with a lightweight CRM flow around daily operator decisions.</p>
-            <ul class="tags"><li>CRM</li><li>Business System</li><li>Dashboard</li></ul>
-            <div class="project-links"><a href="#">View Project</a><a href="#">View Source</a></div>
-          </div>
-        </article>
-        <article class="project reveal">
-          <img class="project-shot" src="https://placehold.co/800x500/fff7ed/9a3412?text=Content+Studio" alt="Content Studio project placeholder screenshot">
-          <div class="project-content">
-            <h3>Content Studio</h3>
-            <p>A fake placeholder project for planning, drafting, and shipping build-in-public content, turning product progress into a simple studio flow for ideas, drafts, assets, and scheduled posts.</p>
-            <ul class="tags"><li>Content</li><li>Workflow</li><li>Creator Tool</li></ul>
-            <div class="project-links"><a href="#">View Project</a><a href="#">View Source</a></div>
-          </div>
-        </article>
-        <article class="project reverse reveal">
-          <img class="project-shot" src="https://placehold.co/800x500/f5f3ff/5b21b6?text=Ops+Board" alt="Ops Board project placeholder screenshot">
-          <div class="project-content">
-            <h3>Ops Board</h3>
-            <p>A fake internal dashboard concept for tracking tasks, handoffs, and business signals, helping small teams keep priorities, status, owners, and next actions visible in one board.</p>
-            <ul class="tags"><li>Dashboard</li><li>Operations</li><li>SaaS</li></ul>
-            <div class="project-links"><a href="#">View Project</a><a href="#">View Source</a></div>
-          </div>
-        </article>
-        <article class="project reveal">
-          <img class="project-shot" src="https://placehold.co/800x500/ecfeff/155e75?text=Prompt+Lab" alt="Prompt Lab project placeholder screenshot">
-          <div class="project-content">
-            <h3>Prompt Lab</h3>
-            <p>A fake AI playground for testing prompt patterns, outputs, and reusable workflows, making experiments easier to compare, save, annotate, and reuse as winning templates.</p>
-            <ul class="tags"><li>AI</li><li>Experiment</li><li>Prompting</li></ul>
-            <div class="project-links"><a href="#">View Project</a><a href="#">View Source</a></div>
-          </div>
-        </article>
-        <article class="project reverse reveal">
-          <img class="project-shot" src="https://placehold.co/800x500/fdf2f8/9d174d?text=Habit+OS" alt="Habit OS project placeholder screenshot">
-          <div class="project-content">
-            <h3>Habit OS</h3>
-            <p>A fake personal system for tracking routines, goals, reflections, and weekly reviews, keeping personal growth focused through clean review loops and visible progress.</p>
-            <ul class="tags"><li>Productivity</li><li>Personal OS</li><li>Tracker</li></ul>
-            <div class="project-links"><a href="#">View Project</a><a href="#">View Source</a></div>
-          </div>
-        </article>
-        <article class="project reveal">
-          <img class="project-shot" src="https://placehold.co/800x500/f0f9ff/0369a1?text=Invoice+Pilot" alt="Invoice Pilot project placeholder screenshot">
-          <div class="project-content">
-            <h3>Invoice Pilot</h3>
-            <p>A fake finance assistant for tracking invoices, payments, reminders, and client billing status, helping freelancers manage unpaid invoices, due dates, and follow-ups from one billing cockpit.</p>
-            <ul class="tags"><li>Finance</li><li>Automation</li><li>Dashboard</li></ul>
-            <div class="project-links"><a href="#">View Project</a><a href="#">View Source</a></div>
-          </div>
-        </article>
-
+        <?php if (!empty($projects)): ?>
+          <?php foreach ($projects as $index => $project): ?>
+            <?php $projectClass = $index % 2 === 0 ? 'project reverse reveal' : 'project reveal'; ?>
+            <article class="<?= e($projectClass) ?>">
+              <?php if ($project['cover_image'] !== ''): ?>
+                <img class="project-shot" src="<?= e($project['cover_image']) ?>" alt="<?= e($project['title']) ?> project screenshot">
+              <?php endif; ?>
+              <div class="project-content">
+                <h3><?= e($project['title']) ?></h3>
+                <?php if ($project['description'] !== ''): ?>
+                  <p><?= e($project['description']) ?></p>
+                <?php endif; ?>
+                <ul class="tags">
+                  <?php if ($project['label'] !== ''): ?><li><?= e($project['label']) ?></li><?php endif; ?>
+                  <?php if ($project['project_year'] !== ''): ?><li><?= e($project['project_year']) ?></li><?php endif; ?>
+                </ul>
+                <div class="project-links"><a href="<?= e(projectDetailUrl($project)) ?>">View Project</a></div>
+              </div>
+            </article>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <article class="project-empty reveal">
+            <div class="project-content">
+              <h3>Projects will be available soon.</h3>
+              <p>Published projects from the dashboard will appear here once they are ready.</p>
+            </div>
+          </article>
+        <?php endif; ?>
       </div>
       <div class="showcase-cta">
-        <a class="button secondary" href="#">Explore More Projects</a>
+        <a class="button secondary" href="projects.php">Explore More Projects</a>
       </div>
     </section>
       <div class="container">

@@ -1,6 +1,7 @@
 <?php
 
-const PROJECTS_API_URL = 'http://localhost/faydev/faylabs-dashboard/api/public/load-projects.php?offset=0';
+const PROJECTS_API_URL       = 'http://localhost/faydev/faylabs-dashboard/api/public/load-projects.php?offset=0';
+const PROJECT_DETAIL_API_URL = 'http://localhost/faydev/faylabs-dashboard/api/public/project-detail.php';
 
 function e(string $value): string
 {
@@ -82,4 +83,71 @@ function normalizeProject(array $project): ?array
 function projectDetailUrl(array $project): string
 {
     return 'project.php?slug=' . rawurlencode($project['slug']);
+}
+
+function fetchProjectBySlug(string $slug): ?array
+{
+    if ($slug === '') {
+        return null;
+    }
+
+    $url  = PROJECT_DETAIL_API_URL . '?slug=' . rawurlencode($slug);
+    $json = fetchJson($url);
+    if ($json === null) {
+        return null;
+    }
+
+    $payload = json_decode($json, true);
+    if (!is_array($payload) || ($payload['success'] ?? false) !== true) {
+        return null;
+    }
+
+    $project = $payload['data'] ?? null;
+    if (!is_array($project)) {
+        return null;
+    }
+
+    return normalizeProjectDetail($project);
+}
+
+function normalizeProjectDetail(array $project): ?array
+{
+    $title = trim((string) ($project['title'] ?? ''));
+    $slug  = trim((string) ($project['slug'] ?? ''));
+
+    if ($title === '' || $slug === '') {
+        return null;
+    }
+
+    $techStack = $project['tech_stack'] ?? [];
+    if (!is_array($techStack)) {
+        $techStack = [];
+    }
+
+    $techStack = array_values(array_filter(array_map(
+        static fn($t) => trim((string) $t),
+        $techStack
+    )));
+
+    $publishedAt = trim((string) ($project['published_at'] ?? ''));
+    $publishedTs = $publishedAt !== '' ? strtotime($publishedAt) : false;
+
+    return [
+        'id'              => (int) ($project['id'] ?? 0),
+        'title'           => $title,
+        'slug'            => $slug,
+        'description'     => trim((string) ($project['description'] ?? '')),
+        'cover_image'     => trim((string) ($project['cover_image'] ?? '')),
+        'label'           => trim((string) ($project['label'] ?? '')),
+        'content'         => (string) ($project['content'] ?? ''),
+        'tech_stack'      => $techStack,
+        'github_url'      => trim((string) ($project['github_url'] ?? '')),
+        'demo_url'        => trim((string) ($project['demo_url'] ?? '')),
+        'project_year'    => trim((string) ($project['project_year'] ?? '')),
+        'seo_title'       => trim((string) ($project['seo_title'] ?? '')),
+        'seo_description' => trim((string) ($project['seo_description'] ?? '')),
+        'views'           => (int) ($project['views'] ?? 0),
+        'published_at'    => $publishedAt,
+        'published_label' => $publishedTs ? date('M j, Y', $publishedTs) : '',
+    ];
 }

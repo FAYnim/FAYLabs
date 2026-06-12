@@ -67,7 +67,6 @@
 .project-detail-cover img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 1px solid var(--border);
   border-radius: 30px;
@@ -404,12 +403,10 @@
 
   .project-sidebar {
     position: static;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 
   .sidebar-card {
-    flex: 1 1 240px;
+    flex: 0 0 auto;
   }
 }
 

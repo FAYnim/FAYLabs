@@ -56,6 +56,11 @@ $ogImage = $project['cover_image'] ?? '';
   <header class="site-header" aria-label="Site header">
     <nav class="nav container">
       <a class="brand" href="index.php" aria-label="FAYdev Labs home">FAYdev Labs</a>
+      <?php if ($project !== null): ?>
+        <a class="nav-back" href="projects.php">
+          <i class="fa-solid fa-arrow-left"></i> Back to Projects
+        </a>
+      <?php endif; ?>
     </nav>
   </header>
 
@@ -80,10 +85,6 @@ $ogImage = $project['cover_image'] ?? '';
       <article class="project-detail">
 
         <header class="project-detail-hero container">
-          <a class="page-back" href="projects.php">
-            <i class="fa-solid fa-arrow-left"></i> Back to Projects
-          </a>
-
           <ul class="tags">
             <?php if ($project['label'] !== ''): ?><li><?= e($project['label']) ?></li><?php endif; ?>
             <?php if ($project['project_year'] !== ''): ?><li><?= e($project['project_year']) ?></li><?php endif; ?>

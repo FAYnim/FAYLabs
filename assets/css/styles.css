@@ -106,6 +106,26 @@ a {
   letter-spacing: -0.06em;
 }
 
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: transform 200ms ease, background 200ms ease, color 200ms ease;
+}
+
+.nav-back:hover {
+  transform: translateY(-2px);
+  background: white;
+  color: var(--text);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -922,6 +942,11 @@ h2 span {
 
   .nav-toggle {
     display: block;
+  }
+
+  .nav-back {
+    padding: 8px 14px;
+    font-size: 0.82rem;
   }
 
   .nav-menu {

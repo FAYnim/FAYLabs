@@ -412,13 +412,45 @@ h2 span {
   box-shadow: var(--shadow-soft);
 }
 
-.project-shot {
-  width: 100%;
-  display: block;
+.project-shot-wrap {
+  position: relative;
   aspect-ratio: 16 / 10;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 22px;
+  background: #f0f0ee;
+}
+
+.project-shot-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  filter: blur(32px);
+  transform: scale(1.25);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.project-shot-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.project-shot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
 }
 
 .gradient-a {
@@ -997,8 +1029,8 @@ h2 span {
     border-radius: 30px;
   }
 
-  .project-shot {
-    min-height: 300px;
+  .project-shot-wrap {
+    min-height: 260px;
   }
 
   .footer-inner {

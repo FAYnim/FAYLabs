@@ -65,14 +65,47 @@
   border-color: rgba(96, 165, 250, 0.34);
 }
 
-.project-card .project-shot {
-  width: 100%;
-  display: block;
+.project-card .project-shot-wrap {
+  position: relative;
   aspect-ratio: 16 / 10;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 22px;
-  object-fit: cover;
+  background: #f0f0ee;
   margin-bottom: 16px;
+}
+
+.project-card .project-shot-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(32px);
+  transform: scale(1.25);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.project-card .project-shot-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.project-card .project-shot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
 }
 
 .project-card .project-shot-placeholder {

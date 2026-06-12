@@ -49,7 +49,10 @@ require __DIR__ . '/partials/header.php';
             <?php $projectClass = $index % 2 === 0 ? 'project reverse reveal' : 'project reveal'; ?>
             <article class="<?= e($projectClass) ?>">
               <?php if ($project['cover_image'] !== ''): ?>
-                <img class="project-shot" src="<?= e($project['cover_image']) ?>" alt="<?= e($project['title']) ?> project screenshot">
+                <div class="project-shot-wrap">
+                  <img class="project-shot-bg" src="<?= e($project['cover_image']) ?>" alt="" aria-hidden="true">
+                  <img class="project-shot" src="<?= e($project['cover_image']) ?>" alt="<?= e($project['title']) ?> project screenshot">
+                </div>
               <?php endif; ?>
               <div class="project-content">
                 <h3><?= e($project['title']) ?></h3>

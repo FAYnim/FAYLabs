@@ -52,12 +52,15 @@ $projects = fetchPublishedProjects();
           <?php foreach ($projects as $index => $project): ?>
             <article class="project-card reveal" style="transition-delay: <?= min($index, 5) * 80 ?>ms">
               <?php if ($project['cover_image'] !== ''): ?>
-                <img
-                  class="project-shot"
-                  src="<?= e($project['cover_image']) ?>"
-                  alt="<?= e($project['title']) ?> project screenshot"
-                  loading="<?= $index < 6 ? 'eager' : 'lazy' ?>"
-                >
+                <div class="project-shot-wrap">
+                  <img class="project-shot-bg" src="<?= e($project['cover_image']) ?>" alt="" aria-hidden="true">
+                  <img
+                    class="project-shot"
+                    src="<?= e($project['cover_image']) ?>"
+                    alt="<?= e($project['title']) ?> project screenshot"
+                    loading="<?= $index < 6 ? 'eager' : 'lazy' ?>"
+                  >
+                </div>
               <?php else: ?>
                 <div class="project-shot-placeholder" aria-hidden="true">
                   <i class="fa-solid fa-rectangle-history"></i>
@@ -148,7 +151,7 @@ $projects = fetchPublishedProjects();
 
             const delay     = Math.min(i, 5) * 80;
             const coverHtml = project.cover_image
-              ? `<img class="project-shot" src="${escHtml(project.cover_image)}" alt="${escHtml(project.title)} project screenshot" loading="lazy">`
+              ? `<div class="project-shot-wrap"><img class="project-shot-bg" src="${escHtml(project.cover_image)}" alt="" aria-hidden="true"><img class="project-shot" src="${escHtml(project.cover_image)}" alt="${escHtml(project.title)} project screenshot" loading="lazy"></div>`
               : `<div class="project-shot-placeholder" aria-hidden="true"><i class="fa-solid fa-rectangle-history"></i></div>`;
 
             const labelHtml = project.label

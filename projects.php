@@ -23,6 +23,16 @@ $projects = fetchPublishedProjects();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('faydev-theme');
+        if (t === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/projects.css">
 </head>
@@ -32,9 +42,15 @@ $projects = fetchPublishedProjects();
   <header class="site-header" aria-label="Site header">
     <nav class="nav container">
       <a class="brand" href="index.php" aria-label="FAYdev Labs home">FAYdev Labs</a>
-      <a class="nav-back" href="index.php">
-        <i class="fa-solid fa-arrow-left"></i> Back to Home
-      </a>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <i class="fa-solid fa-sun theme-icon theme-icon--sun" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon theme-icon theme-icon--moon" aria-hidden="true"></i>
+        </button>
+        <a class="nav-back" href="index.php">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
     </nav>
   </header>
 
@@ -106,6 +122,8 @@ $projects = fetchPublishedProjects();
     </section>
 
   </main>
+
+  <script src="assets/js/theme.js" defer></script>
 
   <?php require __DIR__ . '/partials/footer.php'; ?>
 

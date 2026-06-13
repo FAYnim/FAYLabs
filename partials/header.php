@@ -41,7 +41,6 @@
       </button>
       <div class="nav-menu" id="nav-menu">
         <a href="#work">Work</a>
-        <a href="#build">Build</a>
         <a href="#about">About</a>
         <a href="#public">Journey</a>
         <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">

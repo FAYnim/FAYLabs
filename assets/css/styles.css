@@ -1090,18 +1090,21 @@ h2 span {
 :root[data-theme="dark"] { color-scheme: dark; }
 
 :root[data-theme="dark"] {
-  --bg: #0f172a;
-  --surface: #111c33;
-  --card: #14213d;
-  --border: #1f2a44;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --accent: #93c5fd;
-  --accent-strong: #60a5fa;
-  --accent-soft: #1e3a5f;
-  --cream: #0b1224;
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
-  --shadow-soft: 0 12px 36px rgba(0, 0, 0, 0.3);
+  --bg: #0d1117;
+  --surface: #161b22;
+  --card: #1c2128;
+  --border: #2d333b;
+
+  --text: #f0f6fc;
+  --muted: #8b949e;
+
+  --accent: #7dd3fc;
+  --accent-strong: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 12px 36px rgba(0, 0, 0, 0.25);
+  --cream: #0d1117;
 }
 
 .theme-toggle {
@@ -1133,18 +1136,18 @@ h2 span {
 :root[data-theme="dark"] body::before {
   opacity: 0.22;
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(139, 148, 158, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 148, 158, 0.06) 1px, transparent 1px);
 }
 
 :root[data-theme="dark"] .site-header {
-  border-bottom-color: rgba(31, 42, 68, 0.82);
-  background: rgba(15, 23, 42, 0.82);
+  border-bottom-color: rgba(45, 51, 59, 0.82);
+  background: rgba(22, 27, 34, 0.82);
 }
 
 :root[data-theme="dark"] .eyebrow {
-  border-color: rgba(147, 197, 253, 0.24);
-  background: rgba(30, 58, 95, 0.62);
+  border-color: rgba(125, 211, 252, 0.24);
+  background: rgba(56, 189, 248, 0.10);
 }
 
 :root[data-theme="dark"] .secondary,
@@ -1155,7 +1158,7 @@ h2 span {
 :root[data-theme="dark"] .project,
 :root[data-theme="dark"] .project-links a {
   border-color: var(--border);
-  background: rgba(17, 28, 51, 0.78);
+  background: rgba(22, 27, 34, 0.78);
 }
 
 :root[data-theme="dark"] .primary {
@@ -1164,8 +1167,8 @@ h2 span {
 }
 
 :root[data-theme="dark"] .project-shot-wrap {
-  border-color: rgba(148, 163, 184, 0.18);
-  background: #111827;
+  border-color: rgba(139, 148, 158, 0.18);
+  background: #161b22;
 }
 
 :root[data-theme="dark"] .project-shot-wrap::after {
@@ -1174,14 +1177,14 @@ h2 span {
 
 :root[data-theme="dark"] .build-section,
 :root[data-theme="dark"] .archive-section {
-  border-block-color: rgba(31, 42, 68, 0.82);
-  background: rgba(15, 23, 42, 0.38);
+  border-block-color: rgba(45, 51, 59, 0.82);
+  background: rgba(22, 27, 34, 0.38);
 }
 
 :root[data-theme="dark"] .theme-toggle:hover,
 :root[data-theme="dark"] .nav-back:hover,
 :root[data-theme="dark"] .nav-menu a:hover {
-  background: rgba(20, 33, 61, 0.92);
+  background: rgba(28, 33, 40, 0.92);
 }
 
 :root[data-theme="dark"] .build-card,
@@ -1191,7 +1194,7 @@ h2 span {
 :root[data-theme="dark"] .archive-grid article,
 :root[data-theme="dark"] .footer {
   border-color: var(--border);
-  background: rgba(17, 28, 51, 0.72);
+  background: rgba(22, 27, 34, 0.72);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1204,7 +1207,7 @@ h2 span {
 :root[data-theme="dark"] .about-icon,
 :root[data-theme="dark"] .item-icon {
   color: var(--accent-strong);
-  background: linear-gradient(135deg, rgba(30, 58, 95, 0.92), rgba(20, 33, 61, 0.92));
+  background: linear-gradient(135deg, rgba(22, 27, 34, 0.92), rgba(28, 33, 40, 0.92));
 }
 
 :root[data-theme="dark"] .title-line,
@@ -1213,23 +1216,23 @@ h2 span {
 }
 
 :root[data-theme="dark"] .process ol::before {
-  border-left-color: rgba(96, 165, 250, 0.32);
+  border-left-color: rgba(125, 211, 252, 0.32);
 }
 
 :root[data-theme="dark"] .process li {
-  background: linear-gradient(135deg, rgba(17, 28, 51, 0.94), rgba(20, 33, 61, 0.84));
+  background: linear-gradient(135deg, rgba(22, 27, 34, 0.94), rgba(28, 33, 40, 0.84));
   box-shadow: var(--shadow-soft);
 }
 
 :root[data-theme="dark"] .footer-links a:hover {
-  background: rgba(20, 33, 61, 0.92);
+  background: rgba(28, 33, 40, 0.92);
 }
 
 :root[data-theme="dark"] .gradient-a,
 :root[data-theme="dark"] .gradient-b {
-  background: linear-gradient(135deg, #0f172a, #1e3a5f 55%, #60a5fa);
+  background: linear-gradient(135deg, #0d1117, #1c2128 55%, #7dd3fc);
 }
 
 :root[data-theme="dark"] .gradient-c {
-  background: linear-gradient(135deg, #020617, #1e3a5f 58%, #0f172a);
+  background: linear-gradient(135deg, #0d1117, #2d333b 58%, #161b22);
 }

@@ -394,6 +394,29 @@
   justify-content: center;
 }
 
+:root[data-theme="dark"] .project-detail-hero .page-back,
+:root[data-theme="dark"] .sidebar-card {
+  border-color: var(--border);
+  background: rgba(17, 28, 51, 0.78);
+}
+
+:root[data-theme="dark"] .project-detail-hero .page-back:hover {
+  background: rgba(20, 33, 61, 0.92);
+}
+
+:root[data-theme="dark"] .meta-list > div,
+:root[data-theme="dark"] .prose hr {
+  border-color: rgba(31, 42, 68, 0.92);
+}
+
+:root[data-theme="dark"] .prose code {
+  background: rgba(148, 163, 184, 0.12);
+}
+
+:root[data-theme="dark"] .prose pre {
+  background: rgba(17, 28, 51, 0.78);
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .project-detail-body {

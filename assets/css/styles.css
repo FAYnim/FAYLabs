@@ -1078,3 +1078,152 @@ h2 span {
     transform: none;
   }
 }
+
+/* ---------- Theme switcher ---------- */
+:root { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+:root[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #111c33;
+  --card: #14213d;
+  --border: #1f2a44;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #93c5fd;
+  --accent-strong: #60a5fa;
+  --accent-soft: #1e3a5f;
+  --cream: #0b1224;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  --shadow-soft: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover { background: var(--surface); border-color: var(--muted); }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.theme-toggle .theme-icon { font-size: 1rem; line-height: 1; }
+
+:root[data-theme="dark"] .theme-icon--sun { display: inline; }
+:root[data-theme="dark"] .theme-icon--moon { display: none; }
+:root:not([data-theme="dark"]) .theme-icon--sun { display: none; }
+:root:not([data-theme="dark"]) .theme-icon--moon { display: inline; }
+
+:root[data-theme="dark"] body {
+  background: var(--bg);
+}
+
+:root[data-theme="dark"] body::before {
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+}
+
+:root[data-theme="dark"] .site-header {
+  border-bottom-color: rgba(31, 42, 68, 0.82);
+  background: rgba(15, 23, 42, 0.82);
+}
+
+:root[data-theme="dark"] .eyebrow {
+  border-color: rgba(147, 197, 253, 0.24);
+  background: rgba(30, 58, 95, 0.62);
+}
+
+:root[data-theme="dark"] .secondary,
+:root[data-theme="dark"] .stats div,
+:root[data-theme="dark"] .float-card,
+:root[data-theme="dark"] .nav-back,
+:root[data-theme="dark"] .nav-menu,
+:root[data-theme="dark"] .project,
+:root[data-theme="dark"] .project-links a {
+  border-color: var(--border);
+  background: rgba(17, 28, 51, 0.78);
+}
+
+:root[data-theme="dark"] .primary {
+  background: var(--text);
+  color: var(--bg);
+}
+
+:root[data-theme="dark"] .project-shot-wrap {
+  border-color: rgba(148, 163, 184, 0.18);
+  background: #111827;
+}
+
+:root[data-theme="dark"] .project-shot-wrap::after {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .build-section,
+:root[data-theme="dark"] .archive-section {
+  border-block-color: rgba(31, 42, 68, 0.82);
+  background: rgba(15, 23, 42, 0.38);
+}
+
+:root[data-theme="dark"] .theme-toggle:hover,
+:root[data-theme="dark"] .nav-back:hover,
+:root[data-theme="dark"] .nav-menu a:hover {
+  background: rgba(20, 33, 61, 0.92);
+}
+
+:root[data-theme="dark"] .build-card,
+:root[data-theme="dark"] .social-card,
+:root[data-theme="dark"] .roadmap article,
+:root[data-theme="dark"] .about-grid article,
+:root[data-theme="dark"] .archive-grid article,
+:root[data-theme="dark"] .footer {
+  border-color: var(--border);
+  background: rgba(17, 28, 51, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+:root[data-theme="dark"] .about-card-head h3,
+:root[data-theme="dark"] .about-item strong,
+:root[data-theme="dark"] .process li span {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .about-icon,
+:root[data-theme="dark"] .item-icon {
+  color: var(--accent-strong);
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.92), rgba(20, 33, 61, 0.92));
+}
+
+:root[data-theme="dark"] .title-line,
+:root[data-theme="dark"] .process li::before {
+  background: var(--accent-strong);
+}
+
+:root[data-theme="dark"] .process ol::before {
+  border-left-color: rgba(96, 165, 250, 0.32);
+}
+
+:root[data-theme="dark"] .process li {
+  background: linear-gradient(135deg, rgba(17, 28, 51, 0.94), rgba(20, 33, 61, 0.84));
+  box-shadow: var(--shadow-soft);
+}
+
+:root[data-theme="dark"] .footer-links a:hover {
+  background: rgba(20, 33, 61, 0.92);
+}
+
+:root[data-theme="dark"] .gradient-a,
+:root[data-theme="dark"] .gradient-b {
+  background: linear-gradient(135deg, #0f172a, #1e3a5f 55%, #60a5fa);
+}
+
+:root[data-theme="dark"] .gradient-c {
+  background: linear-gradient(135deg, #020617, #1e3a5f 58%, #0f172a);
+}

@@ -18,6 +18,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('faydev-theme');
+        if (t === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -34,6 +44,12 @@
         <a href="#build">Build</a>
         <a href="#about">About</a>
         <a href="#public">Journey</a>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <i class="fa-solid fa-sun theme-icon theme-icon--sun" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon theme-icon theme-icon--moon" aria-hidden="true"></i>
+        </button>
       </div>
     </nav>
   </header>
+
+  <script src="assets/js/theme.js" defer></script>

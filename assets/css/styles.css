@@ -1147,7 +1147,9 @@ h2 span {
 :root[data-theme="dark"] .secondary,
 :root[data-theme="dark"] .stats div,
 :root[data-theme="dark"] .float-card,
-:root[data-theme="dark"] .nav-back {
+:root[data-theme="dark"] .nav-back,
+:root[data-theme="dark"] .project,
+:root[data-theme="dark"] .project-links a {
   border-color: var(--border);
   background: rgba(17, 28, 51, 0.78);
 }
@@ -1155,6 +1157,21 @@ h2 span {
 :root[data-theme="dark"] .primary {
   background: var(--text);
   color: var(--bg);
+}
+
+:root[data-theme="dark"] .project-shot-wrap {
+  border-color: rgba(148, 163, 184, 0.18);
+  background: #111827;
+}
+
+:root[data-theme="dark"] .project-shot-wrap::after {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .build-section,
+:root[data-theme="dark"] .archive-section {
+  border-block-color: rgba(31, 42, 68, 0.82);
+  background: rgba(15, 23, 42, 0.38);
 }
 
 :root[data-theme="dark"] .theme-toggle:hover,

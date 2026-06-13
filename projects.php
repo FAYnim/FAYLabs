@@ -32,15 +32,15 @@ $projects = fetchPublishedProjects();
   <header class="site-header" aria-label="Site header">
     <nav class="nav container">
       <a class="brand" href="index.php" aria-label="FAYdev Labs home">FAYdev Labs</a>
+      <a class="nav-back" href="index.php">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
     </nav>
   </header>
 
   <main id="main">
 
     <section class="projects-hero container reveal">
-      <a class="page-back" href="index.php">
-        <i class="fa-solid fa-arrow-left"></i> Back to Home
-      </a>
       <p class="eyebrow">ALL PROJECTS</p>
       <h1>Real products, built from <span>problems.</span></h1>
       <p>Every project here started with a real problem. Explore the full list — each one built to learn, ship, and improve.</p>

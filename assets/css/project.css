@@ -1,6 +1,6 @@
 /* ── Project detail page ── */
 .project-detail-hero {
-  padding: 64px 0 40px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -26,7 +26,7 @@
 }
 
 .project-detail-hero .tags {
-  margin-bottom: 22px;
+  margin-top: 10px;
 }
 
 .project-detail-hero h1 {
@@ -40,13 +40,14 @@
   color: var(--muted);
   font-size: clamp(1.05rem, 1.6vw, 1.22rem);
   line-height: 1.55;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .project-detail-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  padding: 28px 0 0;
 }
 
 .project-detail-actions .button {
@@ -57,11 +58,6 @@
 
 .project-detail-actions .button i {
   font-size: 0.95em;
-}
-
-/* Cover image */
-.project-detail-cover {
-  padding: 56px 0 0;
 }
 
 .project-detail-cover img {
@@ -79,7 +75,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: 56px;
-  padding: 64px 0 104px;
+  padding: 32px 0 104px;
   align-items: start;
 }
 
@@ -435,15 +431,19 @@
 
 @media (max-width: 600px) {
   .project-detail-hero {
-    padding: 40px 0 28px;
+    padding: 40px 0 24px;
   }
 
   .project-detail-cover {
-    padding-top: 36px;
+    padding-top: 28px;
+  }
+
+  .project-detail-actions {
+    padding-top: 20px;
   }
 
   .project-detail-body {
-    padding: 40px 0 72px;
+    padding: 36px 0 72px;
   }
 
   .project-detail-actions {

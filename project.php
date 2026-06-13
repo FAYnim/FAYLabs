@@ -85,32 +85,17 @@ $ogImage = $project['cover_image'] ?? '';
       <article class="project-detail">
 
         <header class="project-detail-hero container">
-          <ul class="tags">
-            <?php if ($project['label'] !== ''): ?><li><?= e($project['label']) ?></li><?php endif; ?>
-            <?php if ($project['project_year'] !== ''): ?><li><?= e($project['project_year']) ?></li><?php endif; ?>
-          </ul>
-
           <h1><?= e($project['title']) ?></h1>
 
           <?php if ($project['description'] !== ''): ?>
             <p class="project-lead"><?= e($project['description']) ?></p>
           <?php endif; ?>
 
-          <div class="project-detail-actions">
-            <?php if ($project['demo_url'] !== ''): ?>
-              <a class="button primary" href="<?= e($project['demo_url']) ?>" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            <?php endif; ?>
-            <?php if ($project['github_url'] !== ''): ?>
-              <a class="button secondary" href="<?= e($project['github_url']) ?>" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i> View Code
-              </a>
-            <?php endif; ?>
-            <a class="button secondary" href="projects.php">
-              <i class="fa-solid fa-grid-2"></i> All Projects
-            </a>
-          </div>
+          <ul class="tags">
+            <?php if ($project['label'] !== ''): ?><li><?= e($project['label']) ?></li><?php endif; ?>
+            <?php if ($project['project_year'] !== ''): ?><li><?= e($project['project_year']) ?></li><?php endif; ?>
+          </ul>
+
         </header>
 
         <?php if ($project['cover_image'] !== ''): ?>
@@ -118,6 +103,19 @@ $ogImage = $project['cover_image'] ?? '';
             <img src="<?= e($project['cover_image']) ?>" alt="<?= e($project['title']) ?> cover image" loading="eager" decoding="async">
           </div>
         <?php endif; ?>
+
+        <div class="project-detail-actions container">
+          <?php if ($project['demo_url'] !== ''): ?>
+            <a class="button primary" href="<?= e($project['demo_url']) ?>" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+            </a>
+          <?php endif; ?>
+          <?php if ($project['github_url'] !== ''): ?>
+            <a class="button secondary" href="<?= e($project['github_url']) ?>" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          <?php endif; ?>
+        </div>
 
         <div class="project-detail-body container">
           <div class="project-article">

@@ -1122,8 +1122,8 @@ h2 span {
 
 :root[data-theme="dark"] body {
   background:
-    radial-gradient(circle at top left, rgba(30, 58, 95, 0.62), transparent 34rem),
-    radial-gradient(circle at 85% 8%, rgba(15, 23, 42, 0.72), transparent 26rem),
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.34), transparent 34rem),
+    radial-gradient(circle at 85% 8%, rgba(30, 58, 138, 0.22), transparent 26rem),
     var(--bg);
 }
 

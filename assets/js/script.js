@@ -31,3 +31,21 @@ if (!prefersReducedMotion) {
 } else {
   document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
 }
+
+const contactForm = document.querySelector('#contact-form');
+const contactStatus = document.querySelector('#contact-status');
+
+if (contactForm && contactStatus) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      contactStatus.textContent = '';
+      return;
+    }
+
+    contactStatus.textContent = 'Thanks — your message is ready for the next version of this contact flow.';
+    contactForm.reset();
+  });
+}

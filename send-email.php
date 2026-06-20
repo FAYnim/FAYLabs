@@ -34,19 +34,44 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
-    $mail->setFrom("admin@faylabs.my.id", "Faylabs Contact");
+    $mail->setFrom("admin@faylabs.my.id", "Faylabs Admin");
     $mail->addAddress($receiver);
-    $mail->addReplyTo($email, $name);
 
     $safeName = htmlspecialchars($name, ENT_QUOTES, "UTF-8");
     $safeEmail = htmlspecialchars($email, ENT_QUOTES, "UTF-8");
     $safeReason = htmlspecialchars($reason, ENT_QUOTES, "UTF-8");
     $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, "UTF-8"));
 
+    $replies = [
+        "collaboration" => [
+            "subject" => "Collaboration Message Received",
+            "intro" => "Terima kasih sudah menghubungi Faylabs untuk peluang kolaborasi. Pesan Anda telah diterima dan akan ditinjau untuk melihat ruang kerja sama yang paling sesuai.",
+            "closing" => "Jika cocok, kami akan membalas melalui email ini untuk membahas langkah berikutnya.",
+        ],
+        "project-inquiry" => [
+            "subject" => "Project Inquiry Received",
+            "intro" => "Terima kasih sudah mengirim inquiry project ke Faylabs. Pesan Anda telah diterima dan akan ditinjau berdasarkan kebutuhan, scope, dan potensi solusi yang bisa dibangun.",
+            "closing" => "Kami akan menghubungi Anda kembali melalui email ini jika detail tambahan diperlukan.",
+        ],
+        "hiring" => [
+            "subject" => "Hiring Message Received",
+            "intro" => "Terima kasih sudah menghubungi Faylabs terkait peluang hiring. Pesan Anda telah diterima dan akan ditinjau dengan serius.",
+            "closing" => "Jika peluangnya relevan, kami akan membalas melalui email ini untuk diskusi lanjutan.",
+        ],
+        "general-networking" => [
+            "subject" => "Message Received",
+            "intro" => "Terima kasih sudah menghubungi Faylabs. Pesan networking Anda telah diterima dan akan dibaca dengan baik.",
+            "closing" => "Kami akan membalas melalui email ini jika ada hal yang bisa dilanjutkan.",
+        ],
+    ];
+    $reply = $replies[$reason] ?? $replies["general-networking"];
+    $safeIntro = htmlspecialchars($reply["intro"], ENT_QUOTES, "UTF-8");
+    $safeClosing = htmlspecialchars($reply["closing"], ENT_QUOTES, "UTF-8");
+
     $mail->isHTML(true);
-    $mail->Subject = "New Contact Message: {$reason}";
-    $mail->Body = "<h3>New Contact Message</h3><p><strong>Name:</strong> {$safeName}</p><p><strong>Email:</strong> {$safeEmail}</p><p><strong>Reason:</strong> {$safeReason}</p><p><strong>Message:</strong><br>{$safeMessage}</p>";
-    $mail->AltBody = "Name: {$name}\nEmail: {$email}\nReason: {$reason}\n\nMessage:\n{$message}";
+    $mail->Subject = $reply["subject"];
+    $mail->Body = "<h3>Halo {$safeName},</h3><p>{$safeIntro}</p><p><strong>Ringkasan pesan:</strong></p><p><strong>Reason:</strong> {$safeReason}</p><p><strong>Message:</strong><br>{$safeMessage}</p><p>{$safeClosing}</p>";
+    $mail->AltBody = "Halo {$name},\n\n{$reply["intro"]}\n\nRingkasan pesan:\nReason: {$reason}\nMessage:\n{$message}\n\n{$reply["closing"]}";
 
     $mail->send();
     header("Location: index.php#contact?status=sent");

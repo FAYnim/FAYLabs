@@ -161,10 +161,10 @@ require __DIR__ . '/partials/header.php';
           <p>Have a collaboration idea, project inquiry, hiring opportunity, or just want to connect? Send a short message and I’ll review it with intention.</p>
           <div class="contact-note">
             <span><i class="fa-regular fa-message"></i></span>
-            <p>Use this form to start the conversation. It stays lightweight for now, so nothing is sent or stored yet.</p>
+            <p>Use this form to start the conversation. Your message will be sent directly to my inbox.</p>
           </div>
         </div>
-        <form class="contact-form reveal delay-1" id="contact-form" action="#contact" method="post" novalidate>
+        <form class="contact-form reveal delay-1" id="contact-form" action="send-email.php" method="post">
           <div class="form-field">
             <label for="contact-name">Name</label>
             <input id="contact-name" name="name" type="text" autocomplete="name" required>

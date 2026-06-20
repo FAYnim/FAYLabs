@@ -36,16 +36,14 @@ const contactForm = document.querySelector('#contact-form');
 const contactStatus = document.querySelector('#contact-status');
 
 if (contactForm && contactStatus) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+  const status = new URLSearchParams(window.location.hash.split('?')[1] || '').get('status');
+  const messages = {
+    sent: 'Thanks — your message has been sent.',
+    failed: 'Sorry, your message could not be sent. Please try again later.',
+    invalid: 'Please complete the form with a valid email address.',
+  };
 
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
-      contactStatus.textContent = '';
-      return;
-    }
-
-    contactStatus.textContent = 'Thanks — your message is ready for the next version of this contact flow.';
-    contactForm.reset();
-  });
+  if (messages[status]) {
+    contactStatus.textContent = messages[status];
+  }
 }

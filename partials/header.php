@@ -43,6 +43,7 @@
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#public">Journey</a>
+        <a href="#contact">Contact</a>
         <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
           <i class="fa-solid fa-sun theme-icon theme-icon--sun" aria-hidden="true"></i>
           <i class="fa-solid fa-moon theme-icon theme-icon--moon" aria-hidden="true"></i>

@@ -153,6 +153,46 @@ require __DIR__ . '/partials/header.php';
       </div>
     </section>
 
+    <section class="section container contact" id="contact">
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">CONTACT</p>
+          <h2>Let’s build something useful.</h2>
+          <p>Have a collaboration idea, project inquiry, hiring opportunity, or just want to connect? Send a short message and I’ll review it with intention.</p>
+          <div class="contact-note">
+            <span><i class="fa-regular fa-message"></i></span>
+            <p>Use this form to start the conversation. It stays lightweight for now, so nothing is sent or stored yet.</p>
+          </div>
+        </div>
+        <form class="contact-form reveal delay-1" id="contact-form" action="#contact" method="post" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-reason">Reason</label>
+            <select id="contact-reason" name="reason" required>
+              <option value="">Select a reason</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="project-inquiry">Project Inquiry</option>
+              <option value="hiring">Hiring</option>
+              <option value="general-networking">General Networking</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="button primary" type="submit">Send Message</button>
+          <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
   </main>
 
 <?php require __DIR__ . '/partials/footer.php'; ?>

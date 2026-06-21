@@ -23,7 +23,11 @@ if ($name === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) || $reason === ""
     exit;
 }
 
-saveIncomingEmail($name, $email, $reason, $message);
+$isIncomingEmailSaved = saveIncomingEmail($name, $email, $reason, $message);
+if ($isIncomingEmailSaved !== true) {
+    header("Location: index.php#contact?status=failed");
+    exit;
+}
 
 $mail = new PHPMailer(true);
 $receiver = $email;

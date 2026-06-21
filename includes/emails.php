@@ -30,7 +30,7 @@ function buildIncomingEmailBody(string $reason, string $message): string
     return "Reason: " . contactReasonLabel($reason) . "\n\nMessage:\n" . trim($message);
 }
 
-function saveIncomingEmail(string $senderName, string $senderEmail, string $reason, string $message): ?int
+function saveIncomingEmail(string $senderName, string $senderEmail, string $reason, string $message): bool
 {
     $senderName  = trim($senderName);
     $senderEmail = trim($senderEmail);
@@ -38,7 +38,7 @@ function saveIncomingEmail(string $senderName, string $senderEmail, string $reas
     $message     = trim($message);
 
     if ($senderEmail === '' || !filter_var($senderEmail, FILTER_VALIDATE_EMAIL) || $message === '') {
-        return null;
+        return false;
     }
 
     try {
@@ -58,9 +58,9 @@ function saveIncomingEmail(string $senderName, string $senderEmail, string $reas
             buildIncomingEmailBody($reason, $message),
         ]);
 
-        return (int) $pdo->lastInsertId();
+        return true;
     } catch (Throwable $e) {
         error_log('Failed to save incoming email: ' . $e->getMessage());
-        return null;
+        return false;
     }
 }

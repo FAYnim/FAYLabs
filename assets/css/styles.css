@@ -1322,10 +1322,39 @@ h2 span {
 :root[data-theme="dark"] .roadmap article,
 :root[data-theme="dark"] .about-grid article,
 :root[data-theme="dark"] .archive-grid article,
+:root[data-theme="dark"] .contact-copy,
+:root[data-theme="dark"] .contact-form,
 :root[data-theme="dark"] .footer {
   border-color: var(--border);
   background: rgba(22, 27, 34, 0.72);
   box-shadow: var(--shadow-soft);
+}
+
+:root[data-theme="dark"] .contact-note,
+:root[data-theme="dark"] .form-field input,
+:root[data-theme="dark"] .form-field select,
+:root[data-theme="dark"] .form-field textarea {
+  border-color: var(--border);
+  background: rgba(13, 17, 23, 0.72);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .contact-note span {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent-strong);
+}
+
+:root[data-theme="dark"] .form-field input:focus,
+:root[data-theme="dark"] .form-field select:focus,
+:root[data-theme="dark"] .form-field textarea:focus {
+  border-color: rgba(125, 211, 252, 0.72);
+  background: rgba(22, 27, 34, 0.92);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.16);
+}
+
+:root[data-theme="dark"] .form-field select option {
+  background: var(--surface);
+  color: var(--text);
 }
 
 :root[data-theme="dark"] .about-card-head h3,

@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require __DIR__ . "/vendor/autoload.php";
 require __DIR__ . "/config/app.php";
+require __DIR__ . "/includes/emails.php";
 
 loadEnv(__DIR__ . "/.env");
 
@@ -21,6 +22,8 @@ if ($name === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) || $reason === ""
     header("Location: index.php#contact?status=invalid");
     exit;
 }
+
+saveIncomingEmail($name, $email, $reason, $message);
 
 $mail = new PHPMailer(true);
 $receiver = $email;
